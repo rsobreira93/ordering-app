@@ -1,0 +1,16 @@
+# version and metadata
+.git
+.gitignore
+.dockerignore
+
+# build dependencies
+dist.do
+node_modules
+
+# environment
+*.env
+
+# misc
+.eslint
+.prettierrc
+.README.md
