@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common';
 import { OrdersController } from './orders.controller';
 import * as Joi from 'joi';
-import { OrdersService } from './orders.service';
+import { CreateOrdersService } from './services/create-orders.service';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from '@app/common';
 import { OrdersRepository } from './repositories/orders-repository';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Order, OrderSchema } from './schemas/orde-schema';
+import { GetOrdersService } from './services/get-orders.service';
 
 @Module({
   imports: [
@@ -27,6 +28,6 @@ import { Order, OrderSchema } from './schemas/orde-schema';
     ]),
   ],
   controllers: [OrdersController],
-  providers: [OrdersService, OrdersRepository],
+  providers: [CreateOrdersService, GetOrdersService, OrdersRepository],
 })
 export class OrdersModule {}
